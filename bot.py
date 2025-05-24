@@ -1,13 +1,15 @@
 """Bot module"""
+
 import json
 import discord
 import actions
 
-with open('settings.json', encoding="utf-8") as settings:
+with open("settings.json", encoding="utf-8") as settings:
     settings = json.load(settings)
 
-INVITE_URL = settings['invite_url']
-TOKEN = settings['token']
+INVITE_URL = settings["invite_url"]
+TOKEN = settings["token"]
+
 
 def run_discord_bot():
     """Runs Botchy"""
@@ -17,8 +19,8 @@ def run_discord_bot():
 
     @client.event
     async def on_ready():
-        print(f'{client.user} is now running!')
-        print(f'The invite url is {INVITE_URL}')
+        print(f"{client.user} is now running!")
+        print(f"The invite url is {INVITE_URL}")
 
     @client.event
     async def on_message(message):
